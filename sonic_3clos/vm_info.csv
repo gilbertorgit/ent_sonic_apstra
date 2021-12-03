@@ -1,0 +1,5 @@
+c1_v10_h1,hostname,c1_v10_h1,bond,True,eth0,virbr0,eth1,L10,eth2,L11,
+c1_v10_h2,hostname,c1_v10_h2,bond,False,eth0,virbr0,eth1,L13,eth2,none,
+c1_v20_h3,hostname,c1_v20_h3,bond,False,eth0,virbr0,eth1,L14,eth2,none,
+c2_v100_h1,hostname,c2_v100_h1,bond,False,eth0,virbr0,eth1,L12,eth2,none,
+c2_v200_h2,hostname,c2_v200_h2,bond,False,eth0,virbr0,eth1,L15,eth2,none,
