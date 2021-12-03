@@ -216,7 +216,6 @@ def send_physical_device_parameters_dc1(blueprint_name):
                 for sysDevice in devices_response.json()['items']:
                     if sysDevice['facts']['mgmt_ipaddr'] == '192.168.122.215':
                         response = blueprint_physical_device(blueprint_name, sysDevice['device_key'], value['id'])
-                        return response
 
             elif 'spine2' in value['label'] and value.get('system_type') == 'switch':
                 for sysDevice in devices_response.json()['items']:

@@ -14,9 +14,10 @@ user = "admin"
 pwd = "YourPaSsWoRd"
 new_pwd = "admin"
 
+
 def config_vrdc(hostname, mgmt_ip):
 
-    print(f"- Configuring {hostname}")
+    print(f"- Configuring {hostname} with MGMT IP: {mgmt_ip}")
 
     child = pexpect.spawn(f"virsh console {hostname} --force", timeout=60)
     logging.debug("Got console, Logging in as admin")
@@ -32,7 +33,7 @@ def config_vrdc(hostname, mgmt_ip):
     logging.debug(f"sending user: {pwd}")
     child.sendline(pwd)
 
-    print("##### Disabling Sonic ZTP")
+    print("- Disabling Sonic ZTP")
     child.send("\r")
     child.send("\r")
     child.send("\r")
@@ -43,10 +44,10 @@ def config_vrdc(hostname, mgmt_ip):
     child.expect(".*:")
     child.sendline("y")
     child.send("\r")
-    print("##### Waiting to disable Sonic ZTP. It can take around 2min")
+    print("- Waiting to disable Sonic ZTP. It can take around 2min")
     sleep(150)
 
-    print("##### changing admin password to : admin")
+    print("- changing admin password to : admin")
     child.expect(".*$")
     child.send("\r")
     child.send("\r")
@@ -58,9 +59,9 @@ def config_vrdc(hostname, mgmt_ip):
     child.sendline(new_pwd)
     child.send("\r")
     child.send("\r")
-    print("##### admin password done!")
+    print("- admin password done!")
 
-    print("##### Sonic-CLI Mode")
+    print("- Sonic-CLI Mode")
     child.expect(".*$")
     child.send("\r")
     child.send("\r")
@@ -72,7 +73,7 @@ def config_vrdc(hostname, mgmt_ip):
     child.sendline("configure terminal")
     child.expect(".*#")
 
-    print("##### Configuring Management Interface")
+    print("- Configuring Management Interface")
     logging.debug("going to interface MGMT")
     child.sendline("interface Management 0")
     child.expect(".*#")
@@ -82,14 +83,14 @@ def config_vrdc(hostname, mgmt_ip):
     child.expect(".*#")
     child.sendline("exit")
 
-    print("##### Configuring hostname")
+    print("- Configuring hostname")
     child.expect(".*#")
     child.sendline(f"hostname {hostname}")
 
     child.send("\r")
     child.send("\r")
 
-    print("##### Saving configuration")
+    print("- Saving configuration")
     child.expect(".*#")
     child.send("\r")
     child.sendline("write memory")
@@ -106,4 +107,4 @@ def config_vrdc(hostname, mgmt_ip):
     child.send("\r")
     child.sendcontrol("]")
 
-    print(f"- {hostname} configuration completed")
+    print(f"- configuration completed")

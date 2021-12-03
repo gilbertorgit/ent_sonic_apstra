@@ -293,22 +293,24 @@ def api_ct_int_assign(dic_data):
 if __name__ == '__main__':
 
     print("################################################### Creating Common resources")
-    """
-    
+
+
     # --------------------- Resources
     api_create_asn_pool()
     api_create_vni_pool()
     api_create_ip_pool()
     sleep(1)
     api_create_device_profiles()
-    
+
+    print("################################################### Onbox and Manage Devices")
     # --------------------- Onbox and Manage Devices
     sleep(2)
     create_onbox_device('192.168.122.215', '192.168.122.221')
     check_agent_state()
     manage_device_all()
     sleep(5)
-    
+
+    print("################################################### Design")
     # --------------------- Logical devices, interface map, rack type and templates
     api_create_logical_devices()
     sleep(1)
@@ -317,16 +319,18 @@ if __name__ == '__main__':
     api_create_rack_type()
     sleep(1)
     api_create_templates()
-    
+
+    print("################################################### Create Blueprint")
     # --------------------- Blueprint
     api_create_blueprint()
     sleep(10)
     
     
     # --------------------- DC1 Blueprint
-    print("################################################### DC1 Configuration")
+    print("################################################### Blueprint Configuration")
     
     # --------------------- Allocate IP pools to blueprint
+    print("- Blueprint Resource")
     blueprint_resource_asn_spine("DC1", "DC1-ASN-POOL")
     sleep(1)
     blueprint_resource_asn_leaf("DC1", "DC1-ASN-POOL")
@@ -337,20 +341,20 @@ if __name__ == '__main__':
     sleep(1)
     blueprint_resource_fabric_spine_leaf("DC1", "DC1-SPINE-LEAF")
     sleep(1)
-    
 
+    print("- Blueprint Device Profiles")
     # --------------------- assign device profiles to blueprint
     blueprint_device_profile_3_stage("DC1", "SONIC-10x10-Spine", "SONIC-12x10-Leaf", "SONIC-10x10-BorderLeaf")
     sleep(2)
-    
+    print("- Blueprint Physical Devices")
     # --------------------- assign physical device to blueprint
     send_physical_device_parameters_dc1("DC1")
     sleep(2)
-    
+    print("- Blueprint SVI Subnets MLAG")
     # --------------------- Configure SVI subnets ( necessary for mclag connectivity
     api_set_svi_subnet_mlag(dc1_svi_subnets_mlag_dic)
-    
-    
+
+    print("- Blueprint Routing Zones")
     # --------------------- create routing zones
     api_create_routing_zones(dc1_routing_zones_dic)
     sleep(5)
@@ -358,18 +362,18 @@ if __name__ == '__main__':
     # --------------------- set routing zones loopback
     api_set_rz_loopback(dc1_routing_zones_loopback_dic)
     sleep(5)
-    
+    print("- Blueprint Virtual Networks")
     # --------------------- create virtual networks and set vtep IP
     api_create_virtual_network(dc1_virtual_network_dic)
     sleep(5)
     api_set_vtep_ip(dc1_vtep_ips_dic)
-    
+    print("- Blueprint Commit")
     # --------------------- commit basic configuration
     sleep(5)
     set_deploy_blueprint("DC1", "DC1 Basic Configuration")
     sleep(5)
-    
-    
+
+    print("- Blueprint Connectivity Templates")
     # --------------------- create external router connectivity template, assign interface and allocate IP Pool
     ct.set_external_router_ct("DC1", "dc1-r1-ct-policy-id", "CT-DC1-R1", "10.1.1.1", 65002)
     sleep(5)
@@ -390,9 +394,9 @@ if __name__ == '__main__':
     api_ct_int_assign(dc1_ct_int_assign_dic)
     
     sleep(5)
-    
+    print("- Blueprint Commit")
     # --------------------- commit configuration
     set_deploy_blueprint("DC1", "DC1 Connectivity Templates")
     sleep(5)
-    """
+
 

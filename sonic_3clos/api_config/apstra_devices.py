@@ -111,16 +111,15 @@ def check_agent_state():
     for a in sa_response_json['items']:
         check_list.append(a['status']['state'])
 
-    print(f"-------------------- {check_list}")
+    print(f"- {check_list}")
 
     if any(it != 'success' for it in check_list):
-        print("Checking Onbox devices status = Success. It can take some time")
+        print("- Checking Onbox devices status = Success. It can take some time")
         sleep(10)
-        print("Checking again")
         check_agent_state()
     else:
-        print("-------------------- All devices have been onboarded")
-        print(f"-------------------- {check_list}")
+        print(f"- {check_list}")
+        print("- All devices have been onboarded")
 
 
 def manage_device_all():

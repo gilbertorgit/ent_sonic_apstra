@@ -178,7 +178,6 @@ def create_lab_vms():
         subprocess.call(exapand_img, shell=True)
         subprocess.call(add_metadata, shell=True)
 
-        print(f'######################### bond')
         if bond == "True":
             install_c_vm = f'virt-install --import --name {hostname} \
             --ram 1024 --vcpus 1 \
@@ -295,7 +294,7 @@ def configure_vrdc():
     run_time = time.time() - start_time
     print("** Time waiting: %s sec" % round(run_time, 2))
     sleep(5)
-    print("Send hostname e ip")
+    print("########## Basic MGMT Configuration - hostname and ip")
 
     vrdc_hosts = create_vrdc_dic()
 
@@ -303,5 +302,4 @@ def configure_vrdc():
         hostname = vrdc_hosts[i].get('hostname')
         mgmt_ip = vrdc_hosts[i].get('mgmt_ip')
 
-        print(f"- Sending {hostname} and {mgmt_ip} to configure basic access")
         console_config.config_vrdc(hostname, mgmt_ip)
