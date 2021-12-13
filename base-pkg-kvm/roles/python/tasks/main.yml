@@ -17,6 +17,7 @@
     - name: Additional pip packages
       command: "{{ item }}"
       loop:
+        - 'apt-get remove python-pexpect python3-pexpect'
         - 'python3.7 -m pip install pexpect'
         - 'pip install pyyaml '
         - 'pip install netifaces'

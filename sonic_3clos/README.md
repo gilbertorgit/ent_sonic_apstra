@@ -56,7 +56,7 @@ This test lab has been built and tested using:
   2.1. 128GB RAM
   2.2. I9 with 14 Cores and Intel(R) Xeon(R) CPU E5-2683 v4 @ 2.10GHz
   2.3. 500GB - SSD
-3. Virtual Sonic Enterprise Powered by Dell 
+3. Virtual Sonic Enterprise Powered by Dell 3.3.0
 4. Apstra 4.0.0
 5. CentOS-7-x86_64-GenericCloud.qcow2
 ```
@@ -106,19 +106,25 @@ root@lab:~$ cd /home/lab
 
 ### Download the images and copy to ent_sonic_apstra/sonic_3clos/images
 
-* Apstra - https://support.juniper.net/support/downloads/?p=apstra-fabric-conductor
+* aos_server_4.0.0-314.qcow2 - https://support.juniper.net/support/downloads/?p=apstra-fabric-conductor
 
 * CentOS-7-x86_64-GenericCloud.qcow2 - https://cloud.centos.org/centos/7/images/
 
-* Virtual Sonic Enterprise - 
+* Enterprise_SONiC_OS_3.3.0.img - 
 
-* root@lab:~# cp aos_server_4.0.0-314.qcow2 CentOS-7-x86_64-GenericCloud.qcow2  /home/lab/ent_sonic_apstra/sonic_3clos/images
+* root@lab:~# cp aos_server_4.0.0-314.qcow2 Enterprise_SONiC_OS_3.3.0.img CentOS-7-x86_64-GenericCloud.qcow2 ent_sonic_apstra/sonic_3clos/images/
+
 
 ***Make sure you download the right version as described in this guide. 
 You will have a directory like that one:***
 
 ```
 root@lab:/home/lab/# ls -l /home/lab/ent_sonic_apstra/sonic_3clos/images/
+
+-rw-r--r-- 1 root root 1996657664 Dec 13 15:40 aos_server_4.0.0-314.qcow2
+-rw-r--r-- 1 root root  858783744 Dec 13 15:40 CentOS-7-x86_64-GenericCloud.qcow2
+-rw-r--r-- 1 root root 2473066496 Dec 13 15:40 Enterprise_SONiC_OS_3.3.0.img
+-rw-r--r-- 1 root root         53 Dec 13 15:40 README.md
 
 ```
 
@@ -133,6 +139,8 @@ root@lab:/home/lab/# ls -l /home/lab/ent_sonic_apstra/sonic_3clos/images/
 5. - Delete Topology - It will delete and remove the entire topology and images
 
 ```
+cd ent_sonic_apstra/sonic_3clos/
+
 root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# python3.7 start_stop.py 
 1 - Start Topology
 
