@@ -54,9 +54,9 @@ This test lab has been built and tested using:
 1. Ubuntu 18.04.5 LTS
 2. Server with:
   2.1. 128GB RAM
-  2.2. I9 with 14 Cores and Intel(R) Xeon(R) CPU E5-2683 v4 @ 2.10GHz
+  2.2. I9 with 14 Cores
   2.3. 500GB - SSD
-3. Virtual Sonic Enterprise Powered by Dell 3.3.0
+3. Virtual Sonic Enterprise 3.3.0 - Powered by Dell
 4. Apstra 4.0.0
 5. CentOS-7-x86_64-GenericCloud.qcow2
 ```
