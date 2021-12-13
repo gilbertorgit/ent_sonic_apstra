@@ -115,7 +115,7 @@ root@lab:~$ cd /home/lab
 * Enterprise_SONiC_OS_3.3.0.img - 
 
 ```
-root@lab:/home/lab# cp aos_server_4.0.0-314.qcow2 Enterprise_SONiC_OS_3.3.0.img CentOS-7-x86_64-GenericCloud.qcow2 ent_sonic_apstra/sonic_3clos/images/
+root@lab:/home/lab# cp aos_server_4.0.0-314.qcow2 Enterprise_SONiC_OS_3.3.0.img CentOS-7-x86_64-GenericCloud.qcow2 /home/lab/ent_sonic_apstra/sonic_3clos/images/
 ```
 
 ***Make sure you download the right version as described in this guide. 
