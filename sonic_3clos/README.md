@@ -140,9 +140,10 @@ root@lab:/home/lab/# ls -l /home/lab/ent_sonic_apstra/sonic_3clos/images/
 5. - Delete Topology - It will delete and remove the entire topology and images
 
 ```
-cd ent_sonic_apstra/sonic_3clos/
+root@lab:~# cd /home/lab/ent_sonic_apstra/sonic_3clos/
 
 root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# python3.7 start_stop.py 
+
 1 - Start Topology
 
 2 - Stop Topology
