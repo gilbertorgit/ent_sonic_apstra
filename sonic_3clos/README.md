@@ -69,6 +69,7 @@ This test lab has been built and tested using:
 
 ```
 lab@lab:~$ sudo su -
+
 root@lab:~$ cd /home/lab
 
 root@lab:/home/lab# add-apt-repository ppa:deadsnakes/ppa
@@ -98,8 +99,8 @@ to
 root@lab:/home/lab# shutdown -r now
 
 root@lab:/home/lab# sudo su -
-root@lab:~$ cd /home/lab
 
+root@lab:~$ cd /home/lab
 
 ```
 
