@@ -5,12 +5,6 @@
 ---------------------------------
 """
 import subprocess
-import time
-import console_config
-from time import sleep
-from threading import Thread
-import re
-import os
 
 source_sonic_image = 'images/Enterprise_SONiC_OS_3.3.0.img'
 
@@ -56,7 +50,7 @@ def create_lab_vrdc():
 
     print("---------------------------------------------------------")
     print("---------------------------------------------------------")
-    print("--------------------------------------------------------- Creating vrdc DC1 Topology")
+    print("--------------------------------------------------------- Creating Datacenter Topology")
 
     print("--------------------------------------------------------- Creating vrdc DC1 Images")
 
@@ -286,49 +280,4 @@ def delete_lab_aos():
         delete_image = f"rm -f {image_path}apstra_server.qcow2"
         subprocess.call(delete_image, shell=True)
 
-"""
-def configure_vrdc():
 
-    print("We will wait around 2 minutes to start the initial vrdc configuration")
-    start_time = time.time()
-    sleep(120)
-    run_time = time.time() - start_time
-    print("** Time waiting: %s sec" % round(run_time, 2))
-    sleep(5)
-    print("########## Basic MGMT Configuration - hostname and ip")
-
-    vrdc_hosts = create_vrdc_dic()
-
-    for i in vrdc_hosts.keys():
-        hostname = vrdc_hosts[i].get('hostname')
-        mgmt_ip = vrdc_hosts[i].get('mgmt_ip')
-
-        console_config.config_vrdc(hostname, mgmt_ip)
-"""
-
-
-def configure_routers(hostname, mgmt_ip):
-
-    console_config.config_vrdc(hostname, mgmt_ip)
-
-
-try:
-    def configure_vrdc():
-
-        print("We will wait around 2 minutes to start the initial vrdc configuration")
-        start_time = time.time()
-        sleep(120)
-        run_time = time.time() - start_time
-        print("** Time waiting: %s sec" % round(run_time, 2))
-        sleep(5)
-        print("########## Basic MGMT Configuration - hostname and ip")
-
-        vrdc_hosts = create_vrdc_dic()
-
-        for i in vrdc_hosts.keys():
-            hostname = vrdc_hosts[i].get('hostname')
-            mgmt_ip = vrdc_hosts[i].get('mgmt_ip')
-
-            Thread.start_new_thread( configure_routers, (hostname, mgmt_ip))
-except:
-    print("The operation cannot be performed")

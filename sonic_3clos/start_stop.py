@@ -4,9 +4,11 @@
  Date: 12/2021
 ---------------------------------
 """
+
 import subprocess
 from time import sleep
 import create_lab
+import routers_config
 import time
 
 """
@@ -279,7 +281,7 @@ def create_topology():
     sleep(5)
     create_lab.create_lab_vms()
     sleep(5)
-    create_lab.configure_vrdc()
+    routers_config.configure_vrdc()
 
 
 def delete_topology():

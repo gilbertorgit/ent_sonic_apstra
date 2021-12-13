@@ -1,10 +1,10 @@
 """
 ---------------------------------
  Author: Gilberto Rampini
- Date: 06/2021
+ Date: 12/2021
 ---------------------------------
 """
-import time
+
 import logging
 import pexpect
 from time import sleep
