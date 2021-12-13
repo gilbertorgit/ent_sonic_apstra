@@ -75,52 +75,17 @@ This test lab has been built and tested using:
 
 ```
 lab@lab:~$ su -
-root@lab:~# add-apt-repository ppa:deadsnakes/ppa
-root@lab:~# apt-get -y update
-root@lab:~# apt-get -y install qemu qemu-kvm libvirt-daemon bridge-utils virt-manager ntp net-tools git python3.7 python3-dev python3-pip python3.7-dev libguestfs-tools
-
-
-root@lab:~# python3.7 -m pip install pexpect
-
-root@lab:~# apt -y install python3-scp
-root@lab:~# apt -y install python3-paramiko
-```
-
-```
-root@lab:~# usermod -aG libvirt $USER
-root@lab:~# usermod -aG kvm $USER
-
-root@lab:~# usermod -aG libvirt lab
-root@lab:~# usermod -aG kvm lab
-```
-
-## Virtual MX Installation
-
-* We are using vMX to simulate our Core MPLS.
-
-Enable qemu-kvm hugepages
-
-```
-root@lab:~# sed -i -e 's/KVM_HUGEPAGES=0/KVM_HUGEPAGES=1/' /etc/default/qemu-kvm
-```
-
-Install additional vMX packages
-
-```
-root@lab:~# apt-get -y install python-pip python-netifaces
-
-root@lab:~# pip install pyyaml 
-root@lab:~# pip install netifaces
-```
-
-Configure hugepages
-```
-root@lab:~# sed -i -e 's/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX="default_hugepagesz=1G hugepagesz=1G hugepages=16G"/' /etc/default/grub
+root@lab:~$ cd /home/lab
+root@lab:/home/lab# add-apt-repository ppa:deadsnakes/ppa
+root@lab:/home/lab# apt-get -y update
+root@lab:/home/lab# apt -y install ansible git
+root@lab:/home/lab# git clone https://github.com/gmr2020git/ent_sonic_apstra.git
+root@lab:/home/lab# ansible-playbook base-pkg-kvm/playbook.yml
 ```
 
 Change default virbr0 dhcp range from 254 to 100
 ```
-root@lab:~# virsh net-edit default
+root@lab:/home/lab# virsh net-edit default
 
 from:
 <range start='192.168.122.2' end='192.168.122.254'/>
@@ -128,32 +93,18 @@ to
 <range start='192.168.122.2' end='192.168.122.100'/>
 ```
 
-Update Grub and reboot the server
-```
-root@lab:~# update-grub
-
-root@lab:~# reboot
-```
 
 ## Preparing the environment
 
-### Download vMX image to /home/lab
-
-```
-root@lab:/home/lab# tar -xzvf vmx-bundle-20.4R1.12.tgz
-
-```
-### Download Apstra, Centos GenericCloud, and vQFX Images and copy to vmx/images
+### Download the images and copy to ent_sonic_apstra/sonic_3clos/images
 
 * Apstra - https://support.juniper.net/support/downloads/?p=apstra-fabric-conductor
 
 * CentOS-7-x86_64-GenericCloud.qcow2 - https://cloud.centos.org/centos/7/images/
 
-* vQFX - https://support.juniper.net/support/downloads/?p=vqfx-evaluation - Download as showed below:
-![vQFX-Download](https://github.com/gilbertorgit/jnpr_apstra_kvm/blob/main/Apstra_4_0/dci_3_5_stage/topology_prints/vQFX-Download.png)
+* Virtual Sonic Enterprise - 
 
-
-* root@lab:~# cp aos_server_4.0.0-314.qcow2 CentOS-7-x86_64-GenericCloud.qcow2 jinstall-vqfx-10-f-20.2R1.10.img vqfx-20.2R1-2019010209-pfe-qemu.qcow   /home/lab/vmx/images/
+* root@lab:~# cp aos_server_4.0.0-314.qcow2 CentOS-7-x86_64-GenericCloud.qcow2  /home/lab/ent_sonic_apstra/sonic_3clos/images
 
 ***Make sure you download the right version as described in this guide. 
 You will have a directory like that one:***
@@ -188,15 +139,7 @@ total 7997348
 -rw-r--r-- 1 root root  762839040 Mar 25 11:08 vqfx-20.2R1-2019010209-pfe-qemu.qcow
 ```
 
-## Cloning jnpr_apstra_kvm project
 
-```
-root@lab:/home/lab# git clone https://github.com/gmr2020git/jnpr_apstra_kvm.git
-
-root@lab:/home/lab# mv jnpr_apstra_kvm/Apstra_4_0/dci_3_5_stage/* vmx/
-
-root@lab:/home/lab# cd vmx/
-```
 
 ## Python Script
 
