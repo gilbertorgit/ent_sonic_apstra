@@ -14,8 +14,8 @@ import time
 """
 In case you have a kernel with bridge lacp, stp enable you need to change to 65535
 """
-bridge_echo = 65535
-#bridge_echo = 16384
+#bridge_echo = 65535
+bridge_echo = 16384
 
 
 def clean_memory():
