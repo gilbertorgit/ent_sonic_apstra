@@ -11,7 +11,7 @@ disable_root: 0
 
 chpasswd:
   list: |
-    root:juniper123
+    root:lab123
     lab:lab123
   expire: false
 
