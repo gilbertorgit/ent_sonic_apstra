@@ -8,8 +8,8 @@
 
 
 ```
-root@lab:/home/lab/vmx# cd api_config/
-root@lab:/home/lab/vmx/api_config# python3.7 create_config_apstra_api.py 
+root@lab:~# cd /home/lab/ent_sonic_apstra/sonic_3clos/
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# python3.7 start_stop.py 
 
 ```
 
