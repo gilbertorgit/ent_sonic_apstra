@@ -103,19 +103,20 @@ def get_system_agents():
 def check_agent_state():
 
     print(f"################################################### Checking Onbox/Offbox state before manage devices ")
-
+    sleep(5)
     sa_response = get_system_agents()
     sa_response_json = sa_response.json()
 
     check_list = []
     for a in sa_response_json['items']:
-        check_list.append(a['status']['state'])
+        #check_list.append(a['status']['state'])
+        check_list.append(a['last_job_status']['state'])
 
     print(f"- {check_list}")
 
     if any(it != 'success' for it in check_list):
         print("- Checking Onbox devices status = Success. It can take some time")
-        sleep(10)
+        sleep(5)
         check_agent_state()
     else:
         print(f"- {check_list}")
@@ -124,6 +125,7 @@ def check_agent_state():
 
 def manage_device_all():
 
+    sleep(5)
     device_list_url = f'{url_ba.apstra_url}{url_ba.systems_url}'
     device_list_response = ba.apstra_get(device_list_url).json()
 

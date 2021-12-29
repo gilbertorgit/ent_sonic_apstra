@@ -302,7 +302,7 @@ if __name__ == '__main__':
     sleep(1)
     api_create_device_profiles()
 
-    print("################################################### Onbox and Manage Devices")
+    print("################################################### Onbox/Offbox and Manage Devices")
     # --------------------- Onbox and Manage Devices
     sleep(2)
     create_onbox_device('192.168.122.215', '192.168.122.221')
