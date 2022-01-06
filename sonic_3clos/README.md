@@ -204,6 +204,62 @@ Create a connection to your server and go to "Properties" and configure the rele
 
 ## Apstra API Configuration Script
 
+Before run the API Script, it's always good to check the management connectivity:
+
+```
+ping 192.168.122.215
+ping 192.168.122.216
+ping 192.168.122.217
+ping 192.168.122.218
+ping 192.168.122.219
+ping 192.168.122.220
+```
+
+In case you face any issues, you can configure it manually:
+```
+root@lab:# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 13    apstra_server                  running
+ 14    dc1-sonic-leaf-1               running
+ 15    dc1-sonic-leaf-2               running
+ 16    dc1-sonic-leaf-3               running
+ 17    dc1-sonic-spine-1              running
+ 18    dc1-sonic-spine-2              running
+ 19    dc1-border-sonic-leaf-1        running
+ 20    c1_v10_h1                      running
+ 21    c1_v10_h2                      running
+ 22    c1_v20_h3                      running
+ 23    c2_v100_h1                     running
+ 24    c2_v200_h2                     running
+
+* admin/admin (or YourPaSsWoRd -> Default Sonic Password)
+root@lab:# virsh console dc1-sonic-leaf-1
+
+* Disable ZTP
+# sudo config ztp disable
+
+* configures admin as password
+# sudo passwd admin
+Enter new: admin
+Enter new: admin
+
+# sonic-cli
+# configure terminal
+
+* Based on topology names
+# hostname <hostname> 
+
+# interface Management 0
+# ip address 192.168.122.217/24
+# no shutdown
+# exit
+# exit
+# write memory
+# exit
+# exit
+```
+
 * The script below will configure the entire topology using APIs
 ```
 root@lab:# cd /home/lab/ent_sonic_apstra/sonic_3clos/api_config/

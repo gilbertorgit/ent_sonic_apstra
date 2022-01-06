@@ -294,7 +294,6 @@ if __name__ == '__main__':
 
     print("################################################### Creating Common resources")
 
-
     # --------------------- Resources
     api_create_asn_pool()
     api_create_vni_pool()
@@ -309,6 +308,7 @@ if __name__ == '__main__':
     check_agent_state()
     manage_device_all()
     sleep(5)
+
 
     print("################################################### Design")
     # --------------------- Logical devices, interface map, rack type and templates
@@ -341,10 +341,11 @@ if __name__ == '__main__':
     sleep(1)
     blueprint_resource_fabric_spine_leaf("DC1", "DC1-SPINE-LEAF")
     sleep(1)
-
+    
     print("- Blueprint Device Profiles")
     # --------------------- assign device profiles to blueprint
     blueprint_device_profile_3_stage("DC1", "SONIC-10x10-Spine", "SONIC-12x10-Leaf", "SONIC-10x10-BorderLeaf")
+    
     sleep(2)
     print("- Blueprint Physical Devices")
     # --------------------- assign physical device to blueprint
@@ -372,7 +373,8 @@ if __name__ == '__main__':
     sleep(5)
     set_deploy_blueprint("DC1", "DC1 Basic Configuration")
     sleep(5)
-
+    """
+    """
     print("- Blueprint Connectivity Templates")
     # --------------------- create external router connectivity template, assign interface and allocate IP Pool
     ct.set_external_router_ct("DC1", "dc1-r1-ct-policy-id", "CT-DC1-R1", "10.1.1.1", 65002)
