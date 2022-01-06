@@ -90,7 +90,7 @@ def config_vrdc(hostname, mgmt_ip):
     child.send("\r")
     child.send("\r")
 
-    print(f" {hostname}:- Saving configuration")
+    print(f"- {hostname}: Saving configuration")
     child.expect(".*#")
     child.send("\r")
     child.sendline("write memory")
