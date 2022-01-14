@@ -57,7 +57,7 @@ This test lab has been built and tested using:
   2.2. I9 with 14 Cores
   2.3. 500GB - SSD
 3. Virtual Sonic Enterprise 3.3.0 - Powered by Dell
-4. Apstra 4.0.0
+4. Apstra 4.0.2
 5. CentOS-7-x86_64-GenericCloud.qcow2
 ```
 

@@ -1,4 +1,4 @@
-# Virtual Sonic Enterprise 3.3.0 - Powered by Dell and Apstra 4.0
+# Virtual Sonic Enterprise 3.3.0 - Powered by Dell and Apstra 4.0.2
 
 ## Authors
 

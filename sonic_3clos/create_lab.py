@@ -12,7 +12,7 @@ ent_sonic_image = '/var/lib/libvirt/images/Enterprise_SONiC_OS_3.3.0.img'
 
 generic_centos = '/var/lib/libvirt/images/CentOS-7-x86_64-GenericCloud.qcow2'
 image_path = '/var/lib/libvirt/images/'
-apstra_image = 'aos_server_4.0.0-314.qcow2'
+apstra_image = 'aos_server_4.0.2-142.qcow2'
 
 aos_vm = {'apstra_server': {'hostname': 'apstra_server', 'eth0': 'virbr0', 'eth1': 'none'},}
 

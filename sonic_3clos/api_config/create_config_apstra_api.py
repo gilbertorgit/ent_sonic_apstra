@@ -293,7 +293,7 @@ def api_ct_int_assign(dic_data):
 if __name__ == '__main__':
 
     print("################################################### Creating Common resources")
-
+    
     # --------------------- Resources
     api_create_asn_pool()
     api_create_vni_pool()
@@ -309,7 +309,7 @@ if __name__ == '__main__':
     manage_device_all()
     sleep(5)
 
-
+    
     print("################################################### Design")
     # --------------------- Logical devices, interface map, rack type and templates
     api_create_logical_devices()
@@ -324,8 +324,8 @@ if __name__ == '__main__':
     # --------------------- Blueprint
     api_create_blueprint()
     sleep(10)
-    
-    
+
+
     # --------------------- DC1 Blueprint
     print("################################################### Blueprint Configuration")
     
@@ -351,6 +351,8 @@ if __name__ == '__main__':
     # --------------------- assign physical device to blueprint
     send_physical_device_parameters_dc1("DC1")
     sleep(2)
+
+
     print("- Blueprint SVI Subnets MLAG")
     # --------------------- Configure SVI subnets ( necessary for mclag connectivity
     api_set_svi_subnet_mlag(dc1_svi_subnets_mlag_dic)
@@ -400,6 +402,7 @@ if __name__ == '__main__':
     # --------------------- commit configuration
     set_deploy_blueprint("DC1", "DC1 Connectivity Templates")
     sleep(5)
+
 
 
 
