@@ -161,11 +161,16 @@ The IP in your case can change, in my case, my MGMT IP is 192.168.0.0/24. If pos
 **Apstra Server -> 192.168.0.180**
 
 
-### Configuring Apstra – EVE-NG Only
+### Configuring VMs - CentOS
 
 For more information about Linux EVE-NG images and configuration:
+
 https://www.eve-ng.net/index.php/documentation/howtos/
+
 You will need to configure the Customers VMs based on the table below:
+
+![Linux_IPs](https://github.com/gilbertorgit/ent_sonic_apstra/blob/main/sonic_3clos/eve/linux_ips.JPG)
+
 
 * c1_v10_h1 – Make sure the interface virtualization is e1000 ( Enterprise Sonic only supports e1000 )
 
@@ -232,7 +237,7 @@ USERCTL=no
 
 * After configuring, please reboot the VMs to make sure the configurations have been succeeded.
 
-### Configuring Apstra – EVE-NG Only
+### Apstra API Configuration – EVE-NG Only
 
 Considering you are using EVE-NG, you can still use the API script to configure your entire topology with no manual configuration. 
 
