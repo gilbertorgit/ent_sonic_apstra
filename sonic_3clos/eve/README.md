@@ -19,6 +19,8 @@ Once you have installed your server you can load the lab template “_Exports_ev
   - Configure virtualNic to e1000
 - Although Apstra is configuring an External Router Connection, there is no external router in this topology, in order to have the full connectivity, you will need to set up your own External Route and configure it accordingly.
 
+![EVE_TOPOLOGY](https://github.com/gilbertorgit/ent_sonic_apstra/blob/main/sonic_3clos/eve/eve-topology.jpg)
+
 For more information about EVE-NG images:
 https://www.eve-ng.net/index.php/documentation/howtos/
 
@@ -85,16 +87,16 @@ qemu_options: -machine type=pc,accel=kvm -vga std -usbdevice tablet -boot order=
 Directories Images
 ```
 root@eve-ng:~# mkdir /opt/unetlab/addons/qemu/enterprise-sonic-3-3-0/
-root@eve-ng:~# mkdir /opt/unetlab/addons/qemu/Apstra-4-0-0
+root@eve-ng:~# mkdir /opt/unetlab/addons/qemu/Apstra-4-0-2
 
 mv /root/Enterprise_SONiC_OS_3.3.0.img /opt/unetlab/addons/qemu/enterprise-sonic-3-3-0/hda.qcow2
-mv /root/aos_server_4.0.0-314.qcow2 /opt/unetlab/addons/qemu/Apstra-4-0-0/hda.qcow2
+mv /root/aos_server_4.0.2-142.qcow2 /opt/unetlab/addons/qemu/Apstra-4-0-2/hda.qcow2
 
 
 root@eve-ng:~# ls -l /opt/unetlab/addons/qemu/enterprise-sonic-3-3-0/hda.qcow2
 -rw-r--r-- 1 root root 2473066496 Dec 15 10:46 /opt/unetlab/addons/qemu/enterprise-sonic-3-3-0/hda.qcow2
-root@eve-ng:~# ls -l /opt/unetlab/addons/qemu/Apstra-4-0-0/hda.qcow2
--rw-r--r-- 1 root root 1996657664 Dec 15 10:46 /opt/unetlab/addons/qemu/Apstra-4-0-0/hda.qcow2
+root@eve-ng:~# ls -l /opt/unetlab/addons/qemu/Apstra-4-0-2/hda.qcow2
+-rw-r--r-- 1 root root 1996657664 Dec 15 10:46 /opt/unetlab/addons/qemu/Apstra-4-0-2/hda.qcow2
 
 ```
 
@@ -103,6 +105,8 @@ root@eve-ng:~# ls -l /opt/unetlab/addons/qemu/Apstra-4-0-0/hda.qcow2
 
 You will need to connect to every single Enterprise Sonic and configuring the steps below, for management interface, respect the IPs below:
 The IP in your case can change, in my case, my MGMT IP is 192.168.0.0/24. If possible, change the subnets accordingly based on your lab, but maintain the host IP, so it will be easier to follow the procedure. 
+
+![EVE_IPS](https://github.com/gilbertorgit/ent_sonic_apstra/blob/main/sonic_3clos/eve/dc_ips.JPG)
 
 
 ```
