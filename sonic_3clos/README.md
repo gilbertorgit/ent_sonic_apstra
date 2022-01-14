@@ -115,7 +115,8 @@ root@lab:~$ cd /home/lab
 * Enterprise_SONiC_OS_3.3.0.img - 
 
 ```
-root@lab:/home/lab# cp aos_server_4.0.0-314.qcow2 Enterprise_SONiC_OS_3.3.0.img CentOS-7-x86_64-GenericCloud.qcow2 /home/lab/ent_sonic_apstra/sonic_3clos/images/
+root@lab:/home/lab# cp aos_server_4.0.2-142.qcow2 Enterprise_SONiC_OS_3.3.0.img CentOS-7-x86_64-GenericCloud.qcow2 /home/lab/ent_sonic_apstra/sonic_3clos/images/
+
 ```
 
 ***Make sure you download the right version as described in this guide. 
@@ -124,10 +125,10 @@ You will have a directory like that one:***
 ```
 root@lab:/home/lab/# ls -l /home/lab/ent_sonic_apstra/sonic_3clos/images/
 
--rw-r--r-- 1 root root 1996657664 Dec 13 15:40 aos_server_4.0.0-314.qcow2
--rw-r--r-- 1 root root  858783744 Dec 13 15:40 CentOS-7-x86_64-GenericCloud.qcow2
--rw-r--r-- 1 root root 2473066496 Dec 13 15:40 Enterprise_SONiC_OS_3.3.0.img
--rw-r--r-- 1 root root         53 Dec 13 15:40 README.md
+-rwx------ 1 root root 1972913664 Jan 14 08:55 aos_server_4.0.2-142.qcow2
+-rw-r--r-- 1 root root  858783744 Jan 14 08:55 CentOS-7-x86_64-GenericCloud.qcow2
+-rw-r--r-- 1 root root 2473066496 Jan 14 08:55 Enterprise_SONiC_OS_3.3.0.img
+-rwx------ 1 root root         53 Dec 13 15:38 README.md
 
 ```
 
