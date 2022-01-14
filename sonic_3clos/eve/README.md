@@ -1,4 +1,4 @@
-# Virtual Sonic Enterprise 3.3.0 - Powered by Dell and Apstra 4.0.2
+# Virtual Sonic Enterprise 3.3.0 - Powered by Dell and Apstra 4.0.2 - EVE Configuration
 
 ## Authors
 
@@ -234,12 +234,16 @@ USERCTL=no
 
 ### Configuring Apstra – EVE-NG Only
 
-For KVM topology please visit the link below for further instructions and to download the scripts to build the topology and configure Apstra using APIs.
-Considering you are using EVE-NG, you can still use the API script to configure your entire topology with no manual configuration. If it’s your case, please follow the steps below:
+Considering you are using EVE-NG, you can still use the API script to configure your entire topology with no manual configuration. 
+
+If it’s your case, please follow the steps below:
 
 Download the github repository: https://github.com/gilbertorgit/sonic-3-stage-clos-api.git
 
-You will need to changes some IPs based on your MGMT subnet, or based on the IPs you have allocated to your lab. In my case, I’m using 192.168.0.0, the default subnet configured is 192.168.122.0. 
+You will need to changes some IPs based on your MGMT subnet, or based on the IPs you have allocated to your lab. 
+
+In my case, I’m using 192.168.0.0, the default subnet configured is 192.168.122.0. 
+
 Below are the files you will need to change the IPs:
 - create_config_apstra_api.py
 - blueprint_staged.py
