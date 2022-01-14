@@ -26,6 +26,9 @@ https://github.com/gilbertorgit/sonic-3-stage-clos-api
 
 ![EVE_TOPOLOGY](https://github.com/gilbertorgit/ent_sonic_apstra/blob/main/sonic_3clos/eve/eve-topology.jpg)
 
+- Topology file is available on github:
+  - https://github.com/gilbertorgit/sonic-3-stage-clos-api
+
 For more information about EVE-NG images:
 https://www.eve-ng.net/index.php/documentation/howtos/
 
