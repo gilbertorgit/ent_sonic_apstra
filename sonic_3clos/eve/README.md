@@ -9,6 +9,11 @@
 This document is not intended to be used as a support for installing EVE-NG, as implies that the user has this prerequisite.
 Once you have installed your server you can load the lab template “_Exports_eve-ng_export-ZZZZ (Github)”. You will also have to download your own Apstra, Virtual Enterprise Sonic, and additional images. 
 
+You can download API Script and EVE Topology here:
+
+https://github.com/gilbertorgit/sonic-3-stage-clos-api
+
+
 **Additional Considerations:**
 
 - When configuring Enterprise Sonic with non-interface-naming ( Apstra Use Case ):
