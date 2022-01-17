@@ -112,7 +112,7 @@ root@lab:~$ cd /home/lab
 
 ### Download the images and copy to ent_sonic_apstra/sonic_3clos/images
 
-* aos_server_4.0.0-314.qcow2 - https://support.juniper.net/support/downloads/?p=apstra-fabric-conductor
+* aos_server_4.0.2 - https://support.juniper.net/support/downloads/?p=apstra-fabric-conductor
 
 * CentOS-7-x86_64-GenericCloud.qcow2 - https://cloud.centos.org/centos/7/images/
 
