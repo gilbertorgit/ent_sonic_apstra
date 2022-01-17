@@ -72,9 +72,13 @@ lab@lab:~$ sudo su -
 
 root@lab:~$ cd /home/lab
 
-root@lab:/home/lab# add-apt-repository ppa:deadsnakes/ppa
+root@lab:/home/lab# apt -y install software-properties-common
 
-root@lab:/home/lab# apt-get -y update
+root@lab:/home/lab# add-apt-repository --yes ppa:deadsnakes/ppa
+
+root@lab:/home/lab# add-apt-repository --yes --update ppa:ansible/ansible
+
+root@lab:/home/lab# apt -y update
 
 root@lab:/home/lab# apt -y install ansible git
 
