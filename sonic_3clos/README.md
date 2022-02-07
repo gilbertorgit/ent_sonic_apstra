@@ -146,6 +146,13 @@ root@lab:/home/lab/# ls -l /home/lab/ent_sonic_apstra/sonic_3clos/images/
 4. - Create Topology - It will create the entire topology from scratch
 5. - Delete Topology - It will delete and remove the entire topology and images
 
+* In case you are running your environment under a vmware hypervisor, you have to run a guestfish workaround before this script:
+
+```
+root@lab:~# export LIBGUESTFS_BACKEND_SETTINGS=force_tcg
+
+```
+
 ```
 root@lab:~# cd /home/lab/ent_sonic_apstra/sonic_3clos/
 
