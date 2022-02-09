@@ -116,7 +116,7 @@ root@lab:~$ cd /home/lab
 
 * CentOS-7-x86_64-GenericCloud.qcow2 - https://cloud.centos.org/centos/7/images/
 
-* Enterprise_SONiC_OS_3.3.0.img - 
+* Enterprise_SONiC_OS_3.3.0.img - https://www.dell.com/support/home/en-us/product-support/product/enterprise-sonic-distribution/drivers
 
 ```
 root@lab:/home/lab# cp aos_server_4.0.2-142.qcow2 Enterprise_SONiC_OS_3.3.0.img CentOS-7-x86_64-GenericCloud.qcow2 /home/lab/ent_sonic_apstra/sonic_3clos/images/
