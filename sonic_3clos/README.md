@@ -176,7 +176,7 @@ Select one Option:
 
 ***After creating the topology from scratch you will need to configure your Apstra server. A
 
-Access Apstra server using the console and check the instructions in the folder Apstra_Installation
+Access Apstra server using the console and check the instructions in the folder Apstra_Installation: https://github.com/gilbertorgit/ent_sonic_apstra/tree/main/sonic_3clos/Apstra_Installation
 
 * Apstra Server IP: 192.168.122.180 
 
