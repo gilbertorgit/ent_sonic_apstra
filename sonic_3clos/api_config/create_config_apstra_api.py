@@ -313,13 +313,13 @@ if __name__ == '__main__':
     print("################################################### Design")
     # --------------------- Logical devices, interface map, rack type and templates
     api_create_logical_devices()
-    sleep(1)
+    sleep(2)
     api_create_interface_map()
-    sleep(1)
+    sleep(2)
     api_create_rack_type()
-    sleep(1)
+    sleep(2)
     api_create_templates()
-
+    sleep(5)
     print("################################################### Create Blueprint")
     # --------------------- Blueprint
     api_create_blueprint()
@@ -340,17 +340,17 @@ if __name__ == '__main__':
     blueprint_resource_loopback_leaf("DC1", "DC1-LEAF-LOOPBACK")
     sleep(1)
     blueprint_resource_fabric_spine_leaf("DC1", "DC1-SPINE-LEAF")
-    sleep(1)
+    sleep(3)
     
     print("- Blueprint Device Profiles")
     # --------------------- assign device profiles to blueprint
     blueprint_device_profile_3_stage("DC1", "SONIC-10x10-Spine", "SONIC-12x10-Leaf", "SONIC-10x10-BorderLeaf")
     
-    sleep(2)
+    sleep(3)
     print("- Blueprint Physical Devices")
     # --------------------- assign physical device to blueprint
     send_physical_device_parameters_dc1("DC1")
-    sleep(2)
+    sleep(3)
 
 
     print("- Blueprint SVI Subnets MLAG")
@@ -374,9 +374,8 @@ if __name__ == '__main__':
     # --------------------- commit basic configuration
     sleep(5)
     set_deploy_blueprint("DC1", "DC1 Basic Configuration")
-    sleep(5)
-    """
-    """
+    sleep(10)
+
     print("- Blueprint Connectivity Templates")
     # --------------------- create external router connectivity template, assign interface and allocate IP Pool
     ct.set_external_router_ct("DC1", "dc1-r1-ct-policy-id", "CT-DC1-R1", "10.1.1.1", 65002)
