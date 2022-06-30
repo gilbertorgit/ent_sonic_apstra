@@ -219,12 +219,12 @@ Create a connection to your server and go to "Properties" and configure the rele
 Before run the API Script, it's always good to check the management connectivity:
 
 ```
-ping 192.168.122.215
-ping 192.168.122.216
-ping 192.168.122.217
-ping 192.168.122.218
-ping 192.168.122.219
-ping 192.168.122.220
+ping 192.168.122.215 -c 2
+ping 192.168.122.216 -c 2
+ping 192.168.122.217 -c 2
+ping 192.168.122.218 -c 2
+ping 192.168.122.219 -c 2
+ping 192.168.122.220 -c 2
 ```
 
 In case you face any issues, you can configure it manually:
