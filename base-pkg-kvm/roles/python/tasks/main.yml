@@ -10,9 +10,3 @@
       loop:
         - python-pexpect
         - python3-pexpect
-
-    - name: Additional pip packages
-      command: "{{ item }}"
-      loop:
-        - 'pip install pyyaml '
-        - 'pip install netifaces'

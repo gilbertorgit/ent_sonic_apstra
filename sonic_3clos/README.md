@@ -92,6 +92,8 @@ root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# python3.10 -m venv my-env
 
 root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# source my-env/bin/activate
 
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# cd ..
+
 root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# pip install -r requirements.txt
 
 root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# deactivate
