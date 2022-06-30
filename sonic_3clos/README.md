@@ -85,6 +85,17 @@ root@lab:/home/lab# apt -y install ansible git
 root@lab:/home/lab# git clone https://github.com/gilbertorgit/ent_sonic_apstra.git
 
 root@lab:/home/lab# ansible-playbook ent_sonic_apstra/base-pkg-kvm/playbook.yml
+
+root@lab:/home/lab# cd /home/lab/ent_sonic_apstra/sonic_3clos/
+
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# python3.10 -m venv my-env
+
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# source my-env/bin/activate
+
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# pip install -r requirements.txt
+
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# deactivate
+
 ```
 
 **Change default virbr0 dhcp range from .254 to .100**
@@ -156,7 +167,9 @@ root@lab:~# export LIBGUESTFS_BACKEND_SETTINGS=force_tcg
 ```
 root@lab:~# cd /home/lab/ent_sonic_apstra/sonic_3clos/
 
-root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# python3.7 start_stop.py 
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# source my-env/bin/activate 
+
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/# python start_stop.py 
 
 1 - Start Topology
 
@@ -276,7 +289,9 @@ Enter new: admin
 ```
 root@lab:# cd /home/lab/ent_sonic_apstra/sonic_3clos/api_config/
 
-root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/api_config# python3.7 create_config_apstra_api.py
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/api_config# source my-env/bin/activate 
+
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/api_config# python create_config_apstra_api.py
 ```
 
 **You can check some scripts output in the folder "Output_Script_Example**
