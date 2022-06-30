@@ -289,11 +289,13 @@ Enter new: admin
 
 * The script below will configure the entire topology using APIs
 ```
-root@lab:# cd /home/lab/ent_sonic_apstra/sonic_3clos/api_config/
+### In case you have not activate your python env
+root@lab:# cd /home/lab/ent_sonic_apstra/sonic_3clos/
+root@lab:/home/lab/ent_sonic_apstra/sonic_3clos# source my-env/bin/activate 
 
-root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/api_config# source my-env/bin/activate 
+(my-env) root@lab:/home/lab/ent_sonic_apstra/sonic_3clos# cd /home/lab/ent_sonic_apstra/sonic_3clos/api_config/
 
-root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/api_config# python create_config_apstra_api.py
+(my-env) root@lab:/home/lab/ent_sonic_apstra/sonic_3clos/api_config# python create_config_apstra_api.py
 ```
 
 **You can check some scripts output in the folder "Output_Script_Example**
