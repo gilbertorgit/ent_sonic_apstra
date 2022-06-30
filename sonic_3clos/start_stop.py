@@ -213,12 +213,11 @@ def create_topology():
     sleep(5)
     create_lab.create_lab_vrdc()
     sleep(5)
-    #new
     routers_config.configure_sonic_ztp()
+    sleep(2)
     create_lab.create_lab_vms()
     sleep(5)
     routers_config.configure_virtual_router()
-    #routers_config.configure_vrdc()
 
 
 def delete_topology():
