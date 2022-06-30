@@ -45,3 +45,52 @@ def configure_vrdc():
 
     for t in threads:
         t.join()
+
+
+
+def configure_sonic_ztp():
+
+    threads = []
+
+    print("Wait 1 minute to disable Sonic ZTP")
+    start_time = time.time()
+    sleep(60)
+    run_time = time.time() - start_time
+    print("** Time waiting: %s sec" % round(run_time, 2))
+    print("########## Basic MGMT Configuration - hostname and ip")
+
+
+    virtual_hosts = create_lab.create_vrdc_dic()
+
+    """
+    for i in virtual_hosts.keys():
+        hostname = virtual_hosts[i].get('hostname')
+
+        thread = ConfigureRouter(hostname=hostname, virtual_image='sonic')
+        thread.start()
+        threads.append(thread)
+
+    for t in threads:
+        t.join()
+    """
+
+    for i in virtual_hosts.keys():
+        hostname = virtual_hosts[i].get('hostname')
+
+        console_config.config_virtual_sonic_ztp(hostname)
+
+
+
+def configure_virtual_router():
+
+    print("Wait 4 minutes to start MGMT configuration")
+    sleep(240)
+    print("########## Basic MGMT Configuration - hostname and ip")
+
+    virtual_hosts = create_lab.create_vrdc_dic()
+
+    for i in virtual_hosts.keys():
+        hostname = virtual_hosts[i].get('hostname')
+        mgmt_ip = virtual_hosts[i].get('mgmt_ip')
+
+        console_config.config_virtual_sonic(hostname, mgmt_ip)
