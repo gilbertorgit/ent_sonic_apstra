@@ -293,7 +293,7 @@ def api_ct_int_assign(dic_data):
 if __name__ == '__main__':
 
     print("################################################### Creating Common resources")
-    
+
     # --------------------- Resources
     api_create_asn_pool()
     api_create_vni_pool()
@@ -308,7 +308,6 @@ if __name__ == '__main__':
     check_agent_state()
     manage_device_all()
     sleep(5)
-
     
     print("################################################### Design")
     # --------------------- Logical devices, interface map, rack type and templates
@@ -321,13 +320,17 @@ if __name__ == '__main__':
     api_create_templates()
     sleep(5)
     print("################################################### Create Blueprint")
+    
     # --------------------- Blueprint
     api_create_blueprint()
     sleep(10)
 
-
+    
+    
+    
     # --------------------- DC1 Blueprint
     print("################################################### Blueprint Configuration")
+
     
     # --------------------- Allocate IP pools to blueprint
     print("- Blueprint Resource")
@@ -345,6 +348,7 @@ if __name__ == '__main__':
     print("- Blueprint Device Profiles")
     # --------------------- assign device profiles to blueprint
     blueprint_device_profile_3_stage("DC1", "SONIC-10x10-Spine", "SONIC-12x10-Leaf", "SONIC-10x10-BorderLeaf")
+
     
     sleep(3)
     print("- Blueprint Physical Devices")
@@ -372,9 +376,10 @@ if __name__ == '__main__':
     api_set_vtep_ip(dc1_vtep_ips_dic)
     print("- Blueprint Commit")
     # --------------------- commit basic configuration
-    sleep(5)
+    sleep(10)
     set_deploy_blueprint("DC1", "DC1 Basic Configuration")
     sleep(10)
+
 
     print("- Blueprint Connectivity Templates")
     # --------------------- create external router connectivity template, assign interface and allocate IP Pool
@@ -401,6 +406,8 @@ if __name__ == '__main__':
     # --------------------- commit configuration
     set_deploy_blueprint("DC1", "DC1 Connectivity Templates")
     sleep(5)
+
+
 
 
 
