@@ -22,8 +22,15 @@ Make sure you connect the devices accordingly!
 
 ## Image Info
 
-CentOS Cloud Guest
-
+**CentOS Cloud Guest**
 https://gns3.com/marketplace/appliances
-
 The .iso here can be attached to the specific image. 
+
+**To install Apstra**
+- go to edit -> Preferences -> Qemu VMs -> New
+- RAM: 32768
+- Console: Telnet
+- Upload Apstra Image
+- go to the new image created -> edit
+- change vCPUs to 8
+- then -> OK -> Apply -> OK
