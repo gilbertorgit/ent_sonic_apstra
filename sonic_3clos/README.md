@@ -26,10 +26,9 @@ This project will make available:
 4. Alternatively, there is a PDF document providing all steps to configure your entire topology
    1. If you are a Partner, contact your account manager to have access
    2. If you are an end customer, contact your partner to have access
-5. MPLS Core configuration
-6. Lab Topology
+5. Lab Topology
 
-Following this guide, you will be able to build
+Following this guide you will be able to build:
 
 1. DC1 - 3-Stage Clos network using Virtual Enterprise Sonic and Apstra
 
@@ -45,7 +44,11 @@ Important Information
   - virbr0 - default KVM bridge interface
 - When creating the topology from scratch, you will need to configure your AOS Server. Please see "Apstra_Installation" Folder
   - https://portal.apstra.com/docs/configure_aos.html
-    
+- For EVE-NG and GNS3 info see eve and GNS3 folders
+  - There is no pre-configuration (MGMT IP, hostname, etc,.) automation, however you can still use Apstra API scripts
+  - EVE-NG - Template available 
+  - GNS3 - No Template available 
+
 ## Prerequisites configs
 
 This test lab has been built and tested using:
