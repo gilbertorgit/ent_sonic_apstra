@@ -6,11 +6,12 @@
 
 ## Topology
 
-The topology remains the interface, however, the mapping is a bit different when using GNS3:
-- Interface 1 -> Interface 2 ( GNS3 )
-- Interface 2 -> Interface 3 ( GNS3 )
-
-Make sure you connect the devices accordingly!
+1. The topology remains the interface, however, the mapping is a bit different when using GNS3:
+   1. Interface 1 -> Interface 2 ( GNS3 )
+   2. Interface 2 -> Interface 3 ( GNS3 )
+   3. Make sure you connect the devices accordingly!
+2. CentOS Cloud Guest - https://gns3.com/marketplace/appliances/centos-cloud-guest
+3. GNS3 allows you to upload .iso, please see the iso directory to automatically configure your hosts VMs
 
 ## Basic Devices configuration - Console Mode
 
